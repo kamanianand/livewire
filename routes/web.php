@@ -12,7 +12,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin/login',Login::class)->name('admin.login');
+Route::get('/admin',Login::class)->name('admin.login');
 
 Route::get('/user',User::class)->name('user');
 
