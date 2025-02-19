@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-Use App\Livewire\Login;
-Use App\Livewire\Logout;
-Use App\Livewire\Dashboard;
-Use App\Livewire\User\Users;
-Use App\Livewire\User\CreateUser;
-Use App\Livewire\User\EditUser;
+Use App\Livewire\Admin\Login;
+Use App\Livewire\Admin\Logout;
+Use App\Livewire\Admin\Dashboard;
+Use App\Livewire\Admin\User\Users;
+Use App\Livewire\Admin\User\CreateUser;
+Use App\Livewire\Admin\User\EditUser;
 
 Route::get('/', function () {
     return view('welcome');

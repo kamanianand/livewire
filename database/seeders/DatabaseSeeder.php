@@ -21,11 +21,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        // Admin::create([
-        //     'type' => 1,
-        //     'name' => 'Super admin',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => \Hash::make('123456'),
-        // ]);
+        Admin::create([
+            'type' => 1,
+            'name' => 'Super admin',
+            'email' => 'admin@gmail.com',
+            'password' => \Hash::make('123456'),
+        ]);
     }
 }

@@ -50,6 +50,9 @@
                                     @error('profile_picture')
                                         <strong class="required_message_span">{{ $message }}</strong>
                                     @enderror
+                                    @if($profile_picture)
+                                        <a href="{{ Storage::url('users/'.$profile_picture ) }}" target="_blank">View old image</a>
+                                    @endif
                                 </div>
                                 <div class="col-md-6 justify-content-end">
                                     <button type="submit" class="btn btn-primary me-sm-3 me-1 waves-effect waves-light">Submit</button>

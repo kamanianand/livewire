@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\User;
+namespace App\Livewire\Admin\User;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use App\Models\User;
@@ -20,7 +20,7 @@ class CreateUser extends Component
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users,email|max:255',
         'mobile_no' => 'required|string|min:3',
-        'profile_picture' => 'required|image|mimes:jpg,jpeg,png,gif|max:10240',
+        'profile_picture' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:10240',
     ];
 
     // Store the new user

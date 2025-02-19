@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Livewire\User;
+namespace App\Livewire\Admin\User;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Storage;
 
 #[Title('Edit User Details')]
 class EditUser extends Component
@@ -33,6 +34,7 @@ class EditUser extends Component
             $this->name = $user->name;
             $this->email = $user->email;
             $this->mobile_no = $user->mobile_no;
+            $this->profile_picture = $user->profile_image;
         }
 
         if ($this->userId) {
@@ -53,13 +55,19 @@ class EditUser extends Component
         // if ($this->password) {
         //     $user->password = Hash::make($this->password);
         // }
-
         if (!empty($this->profile_picture)) {
+            if (!empty($user->profile_image)) {
+                $filePath = "users/".$user->profile_image;
+                if (Storage::exists($filePath)) {
+                    Storage::delete($filePath);
+                }
+            }
+
             $file_name = Str::random(40) . '.' . $this->profile_picture->extension();
             $this->profile_picture->storeAs('users', $file_name, 'public');
             $user->profile_image = $file_name;
         }
-
+        
         $user->save();
 
         session()->flash('success', 'User updated successfully!');
