@@ -70,32 +70,32 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## installation steps for a Laravel + Livewire + Alpine.js project
 
 ## 1. Install project dependencies
-Run the following command to install the necessary Composer dependencies (ignoring platform requirements): composer install --ignore-platform-reqs
+#Run the following command to install the necessary Composer dependencies (ignoring platform requirements): composer install --ignore-platform-reqs
 
 ## 2. Set up environment file
-    Copy the .env.example file to create your .env file
-    Then, open the .env file and set the following values:
-    DB connection: Set your database name, username, and password.
-    APP_URL: Set your base URL for the application.
-    FILESYSTEM_DISK: Change the value from local to public:
+    - **Copy the .env.example file to create your .env file
+    - **Then, open the .env file and set the following values:
+    - **DB connection: Set your database name, username, and password.
+    - **APP_URL: Set your base URL for the application.
+    - **FILESYSTEM_DISK: Change the value from local to public:
 
 ## 3. Run database migrations
-    Run the migrations to set up the database structure
+    #Run the migrations to set up the database structure
     php artisan migrate
 
 ## 4. Seed the database
-    Seed the database to create the default admin account
+    #Seed the database to create the default admin account
     php artisan db:seed
 
 ## 5. Clear cache
-    Clear all cached configurations and compiled files to ensure the application runs smoothly
+    #Clear all cached configurations and compiled files to ensure the application runs smoothly
     php artisan optimize:clear
 
 ## 6. Link storage directory
-    Create a symbolic link for the storage folder to the public directory, allowing the application to serve files from the storage folder
+    #Create a symbolic link for the storage folder to the public directory, allowing the application to serve files from the storage folder
     php artisan storage:link
 
 ## 7. Run the application
-    Finally, start the Laravel development server
+    #Finally, start the Laravel development server
     php artisan serve or http://localhost/foldername
 
